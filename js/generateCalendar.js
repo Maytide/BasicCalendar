@@ -32,9 +32,9 @@ for (i = 0; i < times.length; i++) {
     
 }
 
-function range(start, end) {
+function rangeInc(start, end) {
     // Python-like range function
-    return Array(end - start).fill().map((_, idx) => start + idx)
+    return Array(end - start + 1).fill().map((_, idx) => start + idx)
 }
 
 function timeToIndex(day, start_hour, start_min, end_hour, end_min) {
@@ -98,7 +98,7 @@ function timeToIndex(day, start_hour, start_min, end_hour, end_min) {
         default: rowIdxEnd += 0; break;
     }
 
-    rowRange = range(rowIdxStart, rowIdxEnd);
+    rowRange = rangeInc(rowIdxStart, rowIdxEnd);
     if (rowRange === undefined || rowRange.length == 0) {
         rowRange = [rowIdxStart];
     }
