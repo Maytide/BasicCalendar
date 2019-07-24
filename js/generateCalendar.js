@@ -34,7 +34,7 @@ for (i = 0; i < times.length; i++) {
 
 function rangeInc(start, end) {
     // Python-like range function
-    return Array(end - start + 1).fill().map((_, idx) => start + idx)
+    return Array(end - start).fill().map((_, idx) => start + idx + 1)
 }
 
 function timeToIndex(day, start_hour, start_min, end_hour, end_min) {
